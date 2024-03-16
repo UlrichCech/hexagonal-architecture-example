@@ -1,0 +1,21 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+
+    <persistence-unit name="pu_hexagon" transaction-type="JTA">
+        <jta-data-source>java:app/jdbc/hexagon</jta-data-source>
+        <mapping-file>META-INF/orm.xml</mapping-file>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="javax.persistence.validation.mode" value="NONE" />
+            <property name="jakarta.persistence.validation.mode" value="NONE" />
+            <property name="eclipselink.logging.level.sql" value="OFF"/> <!-- FINE/OFF-->
+            <property name="eclipselink.logging.parameters" value="true"/> <!-- true -->
+            <property name="eclipselink.cache.shared.default" value="false"/>
+            <property name="eclipselink.logging.exceptions" value="false" />
+            <property name="eclipselink.persistence-context.flush-mode" value="commit" />
+        </properties>
+    </persistence-unit>
+
+</persistence>

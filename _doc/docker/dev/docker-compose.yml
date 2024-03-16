@@ -1,0 +1,22 @@
+version: '2.3'
+
+services:
+
+  hexagon-db:
+    image: postgres:16
+    container_name: hexagon-db
+    ports:
+      - "5432:5432"
+    networks:
+      - hexagon-net
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: ${DB_POSTGRES_PASSWORD}
+      POSTGRES_DB: hexagon
+    volumes:
+      - .database/docker/local-dev:/var/lib/postgresql/data
+
+networks:
+  hexagon-net:
+    name: hexagon-net
+    driver: bridge
