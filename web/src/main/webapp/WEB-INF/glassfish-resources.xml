@@ -2,70 +2,70 @@
 <!DOCTYPE resources PUBLIC "-//GlassFish.org//DTD GlassFish Application Server 3.1 Resource Definitions//EN" "http://glassfish.org/dtds/glassfish-resources_1_5.dtd">
 <resources>
 
-    <jdbc-connection-pool name="H2Pool"
-                          res-type="javax.sql.DataSource"
-                          datasource-classname="org.h2.jdbcx.JdbcDataSource"
-                          pool-resize-quantity="1"
-                          max-pool-size="10"
-                          steady-pool-size="2"
-                          is-connection-validation-required="false">
-        <property name="URL" value="jdbc:h2:tcp://localhost:9092/hexagon"/>
-        <property name="user" value="postgres"/>
-        <property name="password" value="hae123456"/>
-        <!-- Andere Datenbank-spezifische Eigenschaften können hier angegeben werden -->
-    </jdbc-connection-pool>
-
-    <jdbc-resource enabled="true" jndi-name="java:app/jdbc/hexagon" pool-name="H2Pool" />
-
-
-
-
-<!--    <jdbc-connection-pool datasource-classname="org.postgresql.ds.PGPoolingDataSource" name="hexagon-pool"-->
-<!--                          res-type="javax.sql.ConnectionPoolDataSource">-->
-<!--        <property name="TargetServerType" value="any"/>-->
-<!--        <property name="BinaryTransfer" value="true"/>-->
-<!--        <property name="UnknownLength" value="2147483647"/>-->
-<!--        <property name="DisableColumnSanitiser" value="false"/>-->
-<!--        <property name="UseSpNego" value="false"/>-->
-<!--        <property name="SspiServiceClass" value="POSTGRES"/>-->
-<!--        <property name="ProtocolVersion" value="0"/>-->
-<!--        <property name="SendBufferSize" value="-1"/>-->
-<!--        <property name="ReceiveBufferSize" value="-1"/>-->
-<!--        <property name="LoadBalanceHosts" value="false"/>-->
-<!--        <property name="ReadOnly" value="false"/>-->
-<!--        <property name="LogUnclosedConnections" value="false"/>-->
-<!--        <property name="DatabaseName" value="hexagon"/>-->
-<!--        <property name="CleanupSavepoints" value="false"/>-->
-<!--        <property name="GssLib" value="auto"/>-->
-<!--        <property name="EscapeSyntaxCallMode" value="select"/>-->
-<!--        <property name="LogServerErrorDetail" value="true"/>-->
-<!--        <property name="CancelSignalTimeout" value="10"/>-->
-<!--        <property name="PortNumber" value="5432"/>-->
-<!--        <property name="DefaultRowFetchSize" value="0"/>-->
-<!--        <property name="User" value="postgres"/>-->
-<!--        <property name="DatabaseMetadataCacheFieldsMiB" value="5"/>-->
-<!--        <property name="RecvBufferSize" value="-1"/>-->
-<!--        <property name="URL" value="jdbc:postgresql://localhost:5432/hexagon"/>-->
-<!--        <property name="Url" value="jdbc:postgresql://localhost:5432/hexagon"/>-->
-<!--        <property name="AllowEncodingChanges" value="false"/>-->
-<!--        <property name="JaasLogin" value="true"/>-->
-<!--        <property name="PrepareThreshold" value="5"/>-->
-<!--        <property name="ReWriteBatchedInserts" value="false"/>-->
-<!--        <property name="HideUnprivilegedObjects" value="false"/>-->
-<!--        <property name="SocketTimeout" value="0"/>-->
-<!--        <property name="HostRecheckSeconds" value="10"/>-->
-<!--        <property name="Password" value="hae123456"/>-->
-<!--        <property name="ConnectTimeout" value="10"/>-->
-<!--        <property name="ApplicationName" value="PostgreSQL JDBC Driver"/>-->
-<!--        <property name="PreparedStatementCacheQueries" value="256"/>-->
-<!--        <property name="Ssl" value="false"/>-->
-<!--        <property name="PreparedStatementCacheSizeMiB" value="5"/>-->
-<!--        <property name="ReadOnlyMode" value="transaction"/>-->
-<!--        <property name="LoginTimeout" value="0"/>-->
-<!--        <property name="ServerName" value="localhost"/>-->
-<!--        <property name="DatabaseMetadataCacheFields" value="65536"/>-->
-<!--        <property name="TcpKeepAlive" value="false"/>-->
+<!--    <jdbc-connection-pool name="H2Pool"-->
+<!--                          res-type="javax.sql.DataSource"-->
+<!--                          datasource-classname="org.h2.jdbcx.JdbcDataSource"-->
+<!--                          pool-resize-quantity="1"-->
+<!--                          max-pool-size="10"-->
+<!--                          steady-pool-size="2"-->
+<!--                          is-connection-validation-required="false">-->
+<!--        <property name="URL" value="jdbc:h2:tcp://localhost:9092/hexagon"/>-->
+<!--        <property name="user" value="postgres"/>-->
+<!--        <property name="password" value="hae123456"/>-->
+<!--        &lt;!&ndash; Andere Datenbank-spezifische Eigenschaften können hier angegeben werden &ndash;&gt;-->
 <!--    </jdbc-connection-pool>-->
-<!--    <jdbc-resource pool-name="hexagon-pool" jndi-name="java:app/jdbc/hexagon"/>-->
+
+<!--    <jdbc-resource enabled="true" jndi-name="java:app/jdbc/hexagon" pool-name="H2Pool" />-->
+
+
+
+
+    <jdbc-connection-pool datasource-classname="org.postgresql.ds.PGPoolingDataSource" name="hexagon-pool"
+                          res-type="javax.sql.ConnectionPoolDataSource">
+        <property name="TargetServerType" value="any"/>
+        <property name="BinaryTransfer" value="true"/>
+        <property name="UnknownLength" value="2147483647"/>
+        <property name="DisableColumnSanitiser" value="false"/>
+        <property name="UseSpNego" value="false"/>
+        <property name="SspiServiceClass" value="POSTGRES"/>
+        <property name="ProtocolVersion" value="0"/>
+        <property name="SendBufferSize" value="-1"/>
+        <property name="ReceiveBufferSize" value="-1"/>
+        <property name="LoadBalanceHosts" value="false"/>
+        <property name="ReadOnly" value="false"/>
+        <property name="LogUnclosedConnections" value="false"/>
+        <property name="DatabaseName" value="hexagon"/>
+        <property name="CleanupSavepoints" value="false"/>
+        <property name="GssLib" value="auto"/>
+        <property name="EscapeSyntaxCallMode" value="select"/>
+        <property name="LogServerErrorDetail" value="true"/>
+        <property name="CancelSignalTimeout" value="10"/>
+        <property name="PortNumber" value="5432"/>
+        <property name="DefaultRowFetchSize" value="0"/>
+        <property name="User" value="postgres"/>
+        <property name="DatabaseMetadataCacheFieldsMiB" value="5"/>
+        <property name="RecvBufferSize" value="-1"/>
+        <property name="URL" value="jdbc:postgresql://localhost:5432/hexagon"/>
+        <property name="Url" value="jdbc:postgresql://localhost:5432/hexagon"/>
+        <property name="AllowEncodingChanges" value="false"/>
+        <property name="JaasLogin" value="true"/>
+        <property name="PrepareThreshold" value="5"/>
+        <property name="ReWriteBatchedInserts" value="false"/>
+        <property name="HideUnprivilegedObjects" value="false"/>
+        <property name="SocketTimeout" value="0"/>
+        <property name="HostRecheckSeconds" value="10"/>
+        <property name="Password" value="hae123456"/>
+        <property name="ConnectTimeout" value="10"/>
+        <property name="ApplicationName" value="PostgreSQL JDBC Driver"/>
+        <property name="PreparedStatementCacheQueries" value="256"/>
+        <property name="Ssl" value="false"/>
+        <property name="PreparedStatementCacheSizeMiB" value="5"/>
+        <property name="ReadOnlyMode" value="transaction"/>
+        <property name="LoginTimeout" value="0"/>
+        <property name="ServerName" value="localhost"/>
+        <property name="DatabaseMetadataCacheFields" value="65536"/>
+        <property name="TcpKeepAlive" value="false"/>
+    </jdbc-connection-pool>
+    <jdbc-resource pool-name="hexagon-pool" jndi-name="java:app/jdbc/hexagon"/>
 
 </resources>
