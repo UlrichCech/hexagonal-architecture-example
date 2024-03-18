@@ -1,14 +1,14 @@
 package de.ulrichcech.hae.application.ports.user.in;
 
-import de.ulrichcech.hae.application.domain.user.model.User;
-import de.ulrichcech.hae.application.domain.user.model.UserToRegister;
+import de.ulrichcech.hae.application.ports.user.WrappedUser;
+import de.ulrichcech.hae.application.ports.user.WrappedUserToRegister;
 
 public interface UserRegistrationUseCase {
 
-    boolean validateNewUser(UserToRegister newUserToRegister);
+    boolean validateNewUser(WrappedUserToRegister newUserToRegister);
 
-    User createUser(UserToRegister newUserToRegister);
+    WrappedUser createUser(WrappedUserToRegister newUserToRegister);
 
-    void assignDefaultRolesToUser(User user);
+    void assignDefaultRolesToUser(WrappedUser user);
 
 }

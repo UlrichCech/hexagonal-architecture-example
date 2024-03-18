@@ -12,7 +12,6 @@ import java.util.concurrent.Callable;
 @DependsOn("FlywayMigrator")
 public class JpaTransactionAdapter implements TransactionalPort {
 
-
     @Override
     public final <R> R executeInTransaction(Callable<R> action) {
         try {

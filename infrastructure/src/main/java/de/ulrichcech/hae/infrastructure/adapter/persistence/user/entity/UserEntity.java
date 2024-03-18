@@ -1,7 +1,10 @@
 package de.ulrichcech.hae.infrastructure.adapter.persistence.user.entity;
 
-import de.ulrichcech.hae.application.domain.user.model.UserToRegister;
-import jakarta.persistence.*;
+import de.ulrichcech.hae.application.ports.user.WrappedUserToRegister;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 import java.util.UUID;
 
@@ -27,11 +30,11 @@ public class UserEntity {
         // JPA
     }
 
-    public UserEntity(UserToRegister newUserToRegister) {
+    public UserEntity(WrappedUserToRegister newUserToRegister) {
         this.id = UUID.randomUUID().toString();
-        this.email = newUserToRegister.eMail();
-        this.firstname = newUserToRegister.firstName();
-        this.lastname = newUserToRegister.lastName();
+        this.email = newUserToRegister.email();
+        this.firstname = newUserToRegister.firstname();
+        this.lastname = newUserToRegister.lastname();
     }
 
     public String getId() {

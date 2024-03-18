@@ -1,7 +1,7 @@
 package de.ulrichcech.hae.infrastructure.adapter.persistence.user.services;
 
-import de.ulrichcech.hae.application.domain.user.model.User;
-import de.ulrichcech.hae.application.domain.user.model.UserToRegister;
+import de.ulrichcech.hae.application.ports.user.WrappedUser;
+import de.ulrichcech.hae.application.ports.user.WrappedUserToRegister;
 import de.ulrichcech.hae.application.ports.user.out.UserRepository;
 import de.ulrichcech.hae.infrastructure.adapter.persistence.user.entity.UserEntity;
 import jakarta.ejb.DependsOn;
@@ -17,9 +17,9 @@ public class JpaUserRepository implements UserRepository {
     EntityManager entityManager;
 
     @Override
-    public User save(UserToRegister newUserToRegister) {
+    public WrappedUser registerNewUser(WrappedUserToRegister newUserToRegister) {
         UserEntity entity = new UserEntity(newUserToRegister);
         entityManager.persist(entity);
-        return new User(entity.getId(), entity.getFirstname(), entity.getLastname(), entity.getEmail());
+        return new WrappedUser(entity.getId(), entity.getFirstname(), entity.getLastname(), entity.getEmail());
     }
 }

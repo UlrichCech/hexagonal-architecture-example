@@ -1,10 +1,10 @@
 package de.ulrichcech.hae.application.ports.user.out;
 
-import de.ulrichcech.hae.application.domain.user.model.User;
-import de.ulrichcech.hae.application.domain.user.model.UserToRegister;
+import de.ulrichcech.hae.application.ports.user.WrappedUser;
+import de.ulrichcech.hae.application.ports.user.WrappedUserToRegister;
 
 public interface UserRepository {
 
-    User save(UserToRegister newUserToRegister);
+    WrappedUser registerNewUser(WrappedUserToRegister newUserToRegister);
 
 }

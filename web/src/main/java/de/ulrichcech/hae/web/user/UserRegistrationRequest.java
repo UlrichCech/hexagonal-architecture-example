@@ -1,6 +1,6 @@
 package de.ulrichcech.hae.web.user;
 
-import de.ulrichcech.hae.application.domain.user.model.UserToRegister;
+import de.ulrichcech.hae.application.ports.user.WrappedUserToRegister;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -17,8 +17,8 @@ public class UserRegistrationRequest {
         // JSON
     }
 
-    public UserToRegister userToRegister() {
-        return new UserToRegister(this.getEmail(), this.getFirstname(), this.getLastname());
+    public WrappedUserToRegister userToRegister() {
+        return new WrappedUserToRegister(this.getEmail(), this.getFirstname(), this.getLastname());
     }
 
 

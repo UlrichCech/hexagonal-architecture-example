@@ -1,7 +1,6 @@
 package de.ulrichcech.hae.web.user;
 
 import de.ulrichcech.hae.application.domain.user.services.UserRegistrationService;
-import de.ulrichcech.hae.application.ports.TransactionalPort;
 import de.ulrichcech.hae.application.ports.user.out.UserRepository;
 import de.ulrichcech.hae.application.ports.user.out.UserRoleRepository;
 import de.ulrichcech.hae.infrastructure.adapter.persistence.JpaTransactionAdapter;
